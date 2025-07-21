@@ -1,7 +1,7 @@
 import pytest
 from conftest import *
 from random import choice
-from test_data.data import BUN_NAME, INGREDIENT_FILLING_NAME, INGREDIENT_SAUCE_NAME, BUN_PRICE
+from test_data.data import BUN_NAME, INGREDIENT_FILLING_NAME, INGREDIENT_SAUCE_NAME, BUN_PRICE, RECEIPT
 
 
 class TestBurger:
@@ -43,4 +43,4 @@ class TestBurger:
         burger_fixture.set_buns(bun_mock)
         burger_fixture.add_ingredient(ingredient_filling_mock)
         burger_fixture.add_ingredient(ingredient_sauce_mock)
-        assert 'Флюоресцентная булка' in burger_fixture.get_receipt()
+        assert burger_fixture.get_receipt() == RECEIPT
